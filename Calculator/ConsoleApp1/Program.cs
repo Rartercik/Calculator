@@ -27,7 +27,7 @@ namespace ConsoleApp1
             { '/', () => new Operation(2, (number1, number2) => number1 / number2) }
         };
 
-        public double Evaluate(string expression)
+        public int Evaluate(string expression)
         {
             var nodes = Parse(expression);
             var nodesTree = CreateTree(nodes);
