@@ -1,0 +1,7 @@
+C:\Users\simar\Unity Projects\GitHub\Calculator\Calculator\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\simar\Unity Projects\GitHub\Calculator\Calculator\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\simar\Unity Projects\GitHub\Calculator\Calculator\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\simar\Unity Projects\GitHub\Calculator\Calculator\ConsoleApp1\obj\Debug\CalculatorProgram.csproj.AssemblyReference.cache
+C:\Users\simar\Unity Projects\GitHub\Calculator\Calculator\ConsoleApp1\obj\Debug\CalculatorProgram.csproj.CoreCompileInputs.cache
+C:\Users\simar\Unity Projects\GitHub\Calculator\Calculator\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\simar\Unity Projects\GitHub\Calculator\Calculator\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

@@ -13,7 +13,6 @@ namespace ConsoleApp1
 
             var result = calculator.Evaluate(expression);
             Console.WriteLine(result);
-            Console.ReadKey();
         }
     }
 
@@ -70,10 +69,7 @@ namespace ConsoleApp1
 
         private Node CreateTree(IEnumerable<Node> nodes)
         {
-            var lowest = GetLowestPriorityOf(nodes);
-            var operation = lowest as Operation;
-
-            if (operation != null)
+            if (TryGetLowestOperation(nodes, out var operation))
             {
                 var leftSide = nodes.TakeWhile(node => node != operation);
                 var rightSide = nodes.SkipWhile(node => node != operation).Skip(1);
@@ -84,12 +80,24 @@ namespace ConsoleApp1
                 return operation.Clone(left, right);
             }
 
-            return lowest;
+            return nodes.First();
         }
 
-        private Node GetLowestPriorityOf(IEnumerable<Node> nodes)
+        private bool TryGetLowestOperation(IEnumerable<Node> nodes, out Operation lowest)
         {
-            return nodes.OrderBy(node => node.Scobes).ThenBy(node => node.Priority).First();
+            var operations = nodes.Where(node => node is Operation).Cast<Operation>();
+            lowest = operations.FirstOrDefault();
+
+            foreach(var operation in operations)
+            {
+                if (operation.Scobes < lowest.Scobes ||
+                   (operation.Scobes == lowest.Scobes && operation.Priority <= lowest.Priority))
+                {
+                    lowest = operation;
+                }
+            }
+
+            return lowest != null;
         }
 
         private Operation GetOperation(string expression, int index, int scobes)
